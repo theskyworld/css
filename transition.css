@@ -70,7 +70,7 @@ a:hover,a:focus{
     background-repeat: no-repeat;
 }
 
-/**/
+/*长方形鼠标放置时长度过渡变化，颜色过渡变化*/
 #rectangle{
     width: 150px;
     height: 50px;

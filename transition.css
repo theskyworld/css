@@ -1,0 +1,87 @@
+/*css样式——transition过渡*/
+/*使元素一个或多个属性的值经过一段时间后变成另外一个值，是元素属性状态变化的缓存过程*/
+
+/*圆追随鼠标的点击而缓慢地移动位置*/
+#cycle{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50%;
+    /*transition-property: background-color,margin;*/
+    /*transition-duration: 8s;*/
+    /*transition-delay: 1s;*/
+    /*transition-timing-function: linear;*/
+    transition:transform 1s;
+}
+
+/*导航栏点击时颜色变化的过渡效果（突出显示）*/
+nav{
+    /*让其内部的子元素在横向上均匀排列*/
+    display: flex;
+    /*设置每个子元素排列的间隔*/
+    gap:0.5rem;
+}
+a{
+    /*四个a链接在横向上均匀排列*/
+    flex:1;
+    background-color: #333;
+    color: #fff;
+    border: solid 1px;
+    padding: 0.5rem;
+    /*文本内容横向上居中*/
+    text-align:center;
+    text-decoration: none;
+    /*鼠标点击时链接背景颜色和字体颜色过渡变化*/
+    transition:all 0.5s ease-in-out ;
+}
+a:hover,a:focus{
+    background-color: #fff;
+    color: #333;
+}
+
+/*方框鼠标放置时的过渡旋转和过渡颜色变化*/
+#square{
+    display: block;
+    width:100px;
+    height: 100px;
+    background-color: blue;
+    border-width: 1px;
+    border-style: solid;
+    transition: all 1s linear;
+}
+#square:hover{
+    background-color: #ffcccc;
+    width: 200px;
+    height: 200px;
+    /*顺时针旋转180度*/
+    transform: rotate(180deg);
+}
+
+/*图片鼠标放置时的过渡变化*/
+#pictures{
+    width: auto;
+    height: 500px;
+    background-image: url("./imgs/bg1.png") ;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+}
+#pictures:hover{
+    background-image: url("./imgs/bg2.png") ;
+    background-repeat: no-repeat;
+}
+
+/**/
+#rectangle{
+    width: 150px;
+    height: 50px;
+    color: red;
+    background-color: aquamarine;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+}
+#rectangle:hover{
+    width: 100px;
+    background-color: green;
+    font-size: 8px;
+    color: yellow;
+}

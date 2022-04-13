@@ -61,12 +61,12 @@ a:hover,a:focus{
 #pictures{
     width: auto;
     height: 500px;
-    background-image: url("./imgs/bg1.png") ;
+    background-image: url("../imgs/bg1.png") ;
     background-repeat: no-repeat;
     transition: all 1s ease-in-out;
 }
 #pictures:hover{
-    background-image: url("./imgs/bg2.png") ;
+    background-image: url("../imgs/bg2.png") ;
     background-repeat: no-repeat;
 }
 

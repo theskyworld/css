@@ -1,0 +1,925 @@
+/*设置创建边框特效*/
+/*设置左、上、右、下边框*/
+/*.btn-3:before{*/
+/*    content: "";*/
+/*    background: red;*/
+/*    position: absolute;*/
+/*}*/
+/*!*左、右边框*!*/
+/*.btn-3:before{*/
+/*    width: 2px;*/
+/*    height: 100%;*/
+/*    !*左边框*!*/
+/*    !*left: 0;*!*/
+/*    !*右边框*!*/
+/*    !*right: 0;*!*/
+/*}*/
+/*!*上、下边框*!*/
+/*.btn-3:before{*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    !*上边框*!*/
+/*    !*top: 0;*!*/
+/*    !*left: 0;*!*/
+/*    !*下边框*!*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*}*/
+/*设置左上、左下、右上、右下边框*/
+/*设置前后边框的生成、颜色以及位置（形成左上/左下/右上/右下边框）*/
+/*.btn-3:before,*/
+/*.btn-3:after*/
+/*{*/
+/*    content: "";*/
+/*    background: red;*/
+/*    position: absolute;*/
+/*    !*左上*!*/
+/*    !*left: 0;*!*/
+/*    !*top: 0;*!*/
+/*    !*左下*!*/
+/*    !*left: 0;*!*/
+/*    !*bottom: 0;*!*/
+/*    !*右上*!*/
+/*    !*right: 0;*!*/
+/*    !*top: 0;*!*/
+/*    !*右下*!*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*}*/
+/*!*设置前后边框的长度、粗细*!*/
+/*.btn-3:before{*/
+/*    width: 2px;*/
+/*    height: 100%;*/
+/*}*/
+/*.btn-3:after{*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*}*/
+
+body{
+    /*background背景颜色和背景图像的复合属性*/
+    background: #e0e5ec;
+}
+h1{
+    /*relative相对于自身原来位置进行定位，通过top、left、right、bottom的值确定*/
+    position: relative;
+    /*元素文本居中对齐*/
+    text-align: center;
+    color:#353535;
+    font-size:50px;
+    /*指定使用的字体系列（字体族），值由意向字体系列（带引号或不带引号，如果包含标点符号和数字空格的则一定要带引号）和备用字体系列（通用的）组成*/
+    font-family: "Cormorant Garamond",serif;
+}
+p{
+    font-family: 'Lato',sans-serif;
+    /*定义字体的粗细程度，介于100-900之间，值越大，字体就越粗*/
+    font-weight: 300;
+    /*元素字体水平居中*/
+    text-align:center;
+    font-size:18px;
+    color: #676767;
+}
+.frame{
+    /*基于父元素的宽度计算百分宽度*/
+    width: 90%;
+    margin:40px auto;
+    /*元素文本水平居中*/
+    text-align: center;
+}
+button{
+    margin: 10px;
+}
+.custom-btn{
+    /*行内块元素*/
+    display: inline-block;
+    /*相对于自身位置进行定位,如果相对父元素进行定位，所有按钮会重叠到一起*/
+    position: relative;
+    width:130px;
+    height: 40px;
+    color: #fff;
+    /*边框圆角，值按顺时针方向设置，可为具体数值或百分比*/
+    border-radius: 5px;
+    /*边框阴影*/
+    box-shadow: inset
+                /*设置阴影的水平位置 垂直位置 阴影模糊距离 阴影大小 阴影颜色*/
+                2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px rgba(0,0,0,.1);
+    /*轮廓，设置与border相同*/
+    outline: none;
+    padding: 10px 25px;
+    /*继承父元素的背景*/
+    background: transparent;
+    /*指定光标在此处时的形状*/
+    cursor: pointer;
+    /*对所有属性进行0.3s的过渡*/
+    transition: all 0.3s ease;
+}
+/*对每个按钮进行单独设置*/
+/*1*/
+.btn-1{
+    /*设置背景颜色*/
+    background: rgba(6,14,131);
+    /*设置背景颜色线性渐变（渐变的方向,颜色1 颜色1范围,颜色2 颜色2范围,颜色3 颜色3范围...）/多种颜色的线性混合*/
+    background: linear-gradient(0deg,rgba(6,14,131,1) 0%,rgba(12,25,180,1) 100%);
+    border: none;
+}
+.btn-1:hover{
+    background: rgb(0,3,255);
+    background: linear-gradient(0deg,rgba(0,3,255,1) 0%,rgba(2,126,251,1) 100%);
+}
+/*2*/
+.btn-2{
+    background: rgb(96,9,240);
+    /*设置背景颜色的线性渐变（渐变的方向,颜色1 颜色1范围,颜色2 颜色2范围）*/
+    background: linear-gradient(0deg,rgba(96,9,240,1) 0%,rgba(129,5,240,1) 100%);
+    border: none;
+}
+.btn-2:before{
+    height: 0;
+    width: 2px;
+}
+.btn-2:hover{
+    /*边框阴影（阴影的水平位置 垂直位置 模糊半径 阴影大小 阴影颜色）*/
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116,125,136,.5),
+                inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                inset 4px 4px 6px 0 rgba(0,0,0,.4);
+}
+/*3*/
+/*hover之前*/
+.btn-3{
+    background: rgb(0,172,238);
+    /*背景颜色线性渐变（渐变的方向，颜色1 颜色1范围,颜色2 颜色2范围）*/
+    background: linear-gradient(0deg,rgba(0,172,238,1) 0%,rgba(2,126,251,1) 100%);
+    width: 130px;
+    height: 40px;
+    /*设置btn-3中每行文本的高度*/
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-3 span {
+    display: block;
+    position: relative;
+    /*基于父元素的宽度百分比*/
+    width: 100%;
+    /*基于块级父元素的高度百分比*/
+    height: 100%;
+}
+
+/*设置周围的边框特效*/
+/*右上边框*/
+.btn-3:before,
+.btn-3:after
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+}
+.btn-3:before{
+    width: 2px;
+    height: 0;
+}
+.btn-3:after{
+    width: 0;
+    height: 2px;
+}
+/*hover时*/
+.btn-3:hover{
+    background: transparent;
+    /*边框阴影*/
+    box-shadow: none;
+}
+.btn-3:hover:before{
+    height: 100%;
+}
+.btn-3:hover:after{
+    width: 100%;
+}
+/*左下边框*/
+.btn-3 span:hover{
+    color: rgba(2,126,251,1);
+}
+.btn-3 span:before,
+.btn-3 span:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom:0;
+    background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+}
+.btn-3 span:before{
+    width: 2px;
+    height: 0;
+}
+.btn-3 span:after{
+    width: 0;
+    height: 2px;
+}
+.btn-3 span:hover:before{
+    height: 100%;
+}
+.btn-3 span:hover:after{
+    width: 100%;
+}
+/*4*/
+.btn-4{
+    background-color: #4dccc6;
+    /*背景颜色线性渐变（渐变的方向,颜色1 颜色1范围,颜色2 颜色2范围）*/
+    background-image: linear-gradient(315deg,#4dccc6 0%,#96e4df 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-4:hover{
+    background-color: #89d8d3;
+    /*颜色的线性渐变（渐变的方向,颜色1 颜色1范围,颜色2 颜色2范围）*/
+    background-image: linear-gradient(315deg,#89d8d3 0%,#03c8a8 74%);
+}
+.btn-4 span{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*右上阴影特效*/
+.btn-4:before,
+.btn-4:after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    /*边框阴影（水平方向的位置 垂直方向的位置 阴影模糊距离 阴影的大小 阴影的颜色）*/
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116,125,136,.2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.9),
+                inset 4px 4px 6px 0 rgba(116,125,136,.3);
+    transition: all 0.3s ease;
+}
+.btn-4:before{
+    height: 0;
+    width: .1px;
+}
+.btn-4:after{
+    height: .1px;
+    width: 0;
+}
+.btn-4:hover:before{
+    width: 100%;
+}
+.btn-4:hover:after{
+    height: 100%;
+}
+/*左下阴影特效*/
+.btn-4 span:before,
+.btn-4 span:after
+{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116,125,136,.2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.9),
+                inset 4px 4px 6px 0 rgba(116,125,136,.3);
+    transition: all 0.3s ease;
+}
+.btn-4 span:before{
+    width: .1px;
+    height: 0;
+}
+.btn-4 span:after{
+    width: 0;
+    height: .1px;
+}
+.btn-4 span:hover:before{
+    height: 100%;
+}
+.btn-4 span:hover:after{
+    width: 100%;
+}
+/*5*/
+.btn-5{
+    width: 130px;
+    height: 40px;
+    /*设置元素内文本的行高*/
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(255,27,0);
+    background: linear-gradient(0deg,rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+}
+.btn-5:hover{
+    color: #f0094a;
+    /*背景继承于父元素*/
+    background: transparent;
+    box-shadow: none;
+}
+/*上下边框特效*/
+.btn-5:before,
+.btn-5:after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #f0094a;
+    box-shadow: -1px -1px 5px 0 #fff,
+                7px 7px 20px 0 #003,
+                4px 4px 5px 0 #0002;
+    transition: all 0.8s ease;
+}
+.btn-5:after{
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after
+{
+    width: 100%;
+    transition: all 0.8s ease;
+}
+/*6*/
+.btn-6{
+    background: rgb(247,150,192);
+    background: radial-gradient(circle,rgba(247,150,192,1) 0%,rgba(118,174,241,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-6 span{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*左右边框特效*/
+.btn-6:before,
+.btn-6:after
+{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 1px;
+    box-shadow: -1px -1px 20px 0 rgba(255,255,255,1),
+                -4px -4px 5px 0 rgba(255,255,255,1),
+                7px 7px 20px 0 rgba(0,0,0,.4),
+                4px 4px 5px 0 rgba(0,0,0,.3);
+}
+.btn-6:before{
+    right: 0;
+    top: 0;
+    transition: all 0.5s ease;
+}
+.btn-6:after{
+    left: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+}
+.btn-6:hover{
+    background: transparent;
+    color: #76aef1;
+    box-shadow: none;
+}
+.btn-6:hover:before{
+    height: 100%;
+    transition: all 0.5s ease;
+}
+.btn-6:hover:after{
+    height: 100%;
+    transition: all 0.5s ease;
+}
+/*上下边框特效*/
+.btn-6 span:before,
+.btn-6 span:after
+{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    box-shadow: -1px -1px 20px 0 rgba(255,255,255,1),
+                -4px -4px 5px 0 rgba(255,255,255,1),
+                7px 7px 20px 0 rgba(0,0,0,.4),
+                4px 4px 5px 0 rgba(0,0,0,.3);
+}
+.btn-6 span:before{
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease;
+}
+.btn-6 span:after{
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+}
+.btn-6 span:hover{
+    background: transparent;
+    color: #76aef1;
+    box-shadow: none;
+}
+.btn-6 span:hover:before{
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.btn-6 span:hover:after{
+    width: 100%;
+    transition: all 0.5s ease;
+}
+/*7*/
+.btn-7{
+    background: linear-gradient(0deg,rgba(255,151,0,1) 0%,rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-7:hover{
+    background: transparent;
+    color: rgba(251,75,2,1);
+}
+.btn-7 span{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*右下边框特效*/
+.btn-7:before,
+.btn-7:after
+{
+    content: "";
+    position: absolute;
+    /*边框起始出发的位置*/
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow: -7px -7px 20px 0 rgba(255,255,255,.9),
+                -4px -4px 5px 0 rgba(255,255,255,.9),
+                7px 7px 20px 0 rgba(0,0,0,.2),
+                4px 4px 5px 0 rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-7:before{
+    height: 2px;
+    width: 0;
+}
+.btn-7:after{
+    height: 0;
+    width: 2px;
+}
+.btn-7:hover:before{
+    height: 2px;
+    width: 100%;
+}
+.btn-7:hover:after{
+    width: 2px;
+    height: 100%;
+}
+/*左上边框特效*/
+.btn-7 span:before,
+.btn-7 span:after
+{
+    content: "";
+    position: absolute;
+    /*边框起始出发的位置*/
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow: -7px -7px 20px 0 rgba(255,255,255,.9),
+                -4px -4px 5px 0 rgba(255,255,255,.9),
+                7px 7px 20px 0 rgba(0,0,0,.2),
+                4px 4px 5px 0 rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-7 span:before{
+    height: 2px;
+    width: 0;
+}
+.btn-7 span:after{
+    height: 0;
+    width: 2px;
+}
+.btn-7 span:hover:before{
+    height: 2px;
+    width: 100%;
+}
+.btn-7 span:hover:after{
+    width: 2px;
+    height: 100%;
+}
+/*8*/
+.btn-8{
+    background: #f0ecfc;
+    background: linear-gradient(315deg,#f0ecfc 0%, #c797eb 74%);
+    border: none;
+    line-height: 42px;
+    padding: 0;
+}
+.btn-8:hover{
+    color: #c797eb;
+    background: transparent;
+}
+.btn-8 span{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*左上边框*/
+.btn-8:before,
+.btn-8:after
+{
+    content:"";
+    position: absolute;
+    background: #c797eb;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+}
+.btn-8:before{
+    height: 2px;
+    width: 0;
+}
+.btn-8:hover:before{
+    height: 2px;
+    width: 100%;
+}
+.btn-8:after{
+    height: 0;
+    width: 2px;
+}
+.btn-8:hover:after{
+    height: 100%;
+    width: 2px;
+}
+/*右下边框*/
+.btn-8 span:before,
+.btn-8 span:after
+{
+    content:"";
+    position: absolute;
+    background: #c797eb;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+.btn-8 span:before{
+    height: 2px;
+    width: 0;
+}
+.btn-8 span:hover:before{
+    height: 2px;
+    width: 100%;
+}
+.btn-8 span:after{
+    height: 0;
+    width: 2px;
+}
+.btn-8 span:hover:after{
+    height: 100%;
+    width: 2px;
+}
+/*9*/
+.btn-9{
+    border: none;
+    /*隐藏溢出的文本*/
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+/*设置按钮的整体背景*/
+.btn-9:after{
+    content: "";
+    position: absolute;
+    /*层级设置为-1，不遮挡文字*/
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1fd1f9;
+    background-image: linear-gradient(315deg,#1fd1f9 0%,#b621fe 74%);
+    transition: all 0.3s ease;
+}
+.btn-9:hover{
+    background: transparent;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116,125,136,.2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.5),
+                inset 4px 4px 6px 0 rgba(116,125,136,.3);
+    color: #fff;
+}
+.btn-9:hover:after{
+    /*将按钮的背景进行变形操作*/
+    /*x轴和y轴上放大2倍，旋转180度*/
+    transform: scale(2) rotate(180deg);
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116,125,136,.2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.5),
+                inset 4px 4px 6px 0 rgba(116,125,136,.3);
+}
+/*10*/
+.btn-10{
+    background: rgb(22,9,240);
+    background: linear-gradient(0deg,rgba(22,9,240,1) 0%,rgba(49,110,244,1) 100%);
+    color: #fff;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+/*设置背景颜色的变形*/
+.btn-10:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.1);
+    transition: all 0.3s ease;
+}
+.btn-10:hover{
+    color: #fff;
+    background: transparent;
+}
+.btn-10:hover:after{
+    background: rgb(0,3,255);
+    background: linear-gradient(0deg,rgba(2,126,251,1) 0%,rgba(0,3,255,1) 100%);
+    transform: scale(1);
+}
+/*11*/
+.btn-11{
+    border: none;
+    background: rgba(251,33,117);
+    background: linear-gradient(0deg,rgba(251,33,117,1) 0%,rgba(234,76,137,1) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover{
+    text-decoration: none;
+    color: #fff;
+}
+/*设置定时闪现的白光动画*/
+.btn-11:before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+/*设置按钮的不透明度降低*/
+.btn-11:hover{
+    opacity: .7;
+}
+/*设置点击按钮时的阴影变化*/
+.btn-11:active{
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116,125,136,.2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                inset 4px 4px 6px 0 rgba(0,0,0,.2);
+}
+@keyframes shiny-btn1 {
+    0%{
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    80%{
+        transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    81%{
+        transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+    /*0%{*/
+    /*    transform: scale(4) rotate(45deg);*/
+    /*    opacity: 1;*/
+    /*}*/
+    /*0%{*/
+    /*    transform: scale(50) rotate(45deg);*/
+    /*    opacity: 0;*/
+    /*}*/
+}
+/*12*/
+.btn-12{
+    position: relative;
+    right: 25px;
+    bottom: 20px;
+    border: none;
+    box-shadow: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    perspective: 230px;
+}
+.btn-12 span{
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    background: rgb(0,172,238);
+    background: linear-gradient(0deg,rgba(0,172,238,1) 0%,rgba(2,126,251,1) 100%);
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px 0 rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    /*设置计算元素总高度和总宽度的方式：包含边框和内边距*/
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.btn-12 span:nth-child(1){
+    box-shadow: -7px -7px 20px 0 #fff9,
+                -4px -4px 5px 0 #fff9,
+                7px 7px 20px 0 #0002,
+                4px 4px 5px 0 #0001;
+    /*指定元素沿x轴旋转90度*/
+    transform: rotateX(90deg);
+    /*指定旋转的起始位置*/
+    transform-origin: 50% 50% -20px ;
+}
+.btn-12 span:nth-child(2){
+    /*指定元素沿x轴旋转0度*/
+    transform: rotateX(0deg);
+    /*指定旋转的起始位置*/
+    transform-origin: 50% 50% -20px ;
+}
+.btn-12:hover span:nth-child(1){
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px 0 rgba(0,0,0,.1);
+    /*指定元素沿x轴旋转0度*/
+    transform: rotateX(0deg);
+    /*指定旋转的起始位置*/
+    transform-origin: 50% 50% -20px ;
+}
+.btn-12:hover span:nth-child(2){
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px 0 rgba(0,0,0,.1);
+    color: transparent;
+    /*指定元素沿x轴旋转-90度*/
+    transform: rotateX(-90deg);
+}
+/*13*/
+.btn-13{
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg,#89d8d3 0%,#03c8a8 74%);
+    border: none;
+    z-index: 1;
+}
+/*设置鼠标悬停时从上面出现的闪光*/
+.btn-13:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #4dccc6;
+    background-image: linear-gradient(315deg,#4dccc6 0%,#96e4df 74%);
+    box-shadow: -7px -7px 20px 0 #fff9,
+                -4px -4px 5px 0 #fff9,
+                7px 7px 20px 0 #0002,
+                4px 4px 5px 0 #0001;
+    transition: all 0.3s ease;
+}
+.btn-13:hover{
+    color: #fff;
+}
+.btn-13:hover:after{
+    top: 0;
+    height: 100%;
+}
+.btn-13:active{
+    top: 2px;
+}
+/*14*/
+.btn-14{
+    background: rgba(255,151,0);
+    border: none;
+    z-index: 1;
+}
+/*设置鼠标悬停时从下面出现的闪光*/
+.btn-14:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    border-color: #eaf818;
+    background-image: linear-gradient(315deg,#eaf818 0%,#f6fc9c 74%);
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px 0 rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+.btn-14:hover{
+    color: #000;
+}
+.btn-14:hover:after{
+    top: auto;
+    bottom: 0;
+    height: 100%;
+}
+.btn-14:active{
+    top: 2px;
+}
+/*15*/
+.btn-15{
+    background: #b621fe;
+    border: none;
+    z-index: 1;
+}
+/*设置鼠标悬停时从左边出现的闪光*/
+.btn-15:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #663dff;
+    /*background-image: linear-gradient(315deg,#eaf818 0%,#f6fc9c 74%);*/
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+                7px 7px 20px 0 rgba(0,0,0,.1),
+                4px 4px 5px 0 rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+.btn-15:hover{
+    color: #fff;
+}
+.btn-15:hover:after{
+    left: 0;
+    width: 100%;
+}
+.btn-15:active{
+    top: 2px;
+}
+/*16*/
+.btn-16{
+    border: none;
+    color: #000;
+}
+/*设置鼠标悬停时从右边出现的闪光*/
+.btn-16:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow: -7px -7px 20px 0 #fff9,
+                -4px -4px 5px 0 #fff9,
+                7px 7px 20px 0 #0002,
+                4px 4px 5px 0 #0001;
+    transition: all 0.3s ease;
+}
+.btn-16:hover{
+    color: #000;
+}
+.btn-16:hover:after{
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.btn-16:active{
+    top: 2px;
+}
+/*总结*/
+/*1.:before，:after的运用*/
+/*不仅可以用于在元素前后添加字符内容，还能设置边框、背景特效等*/
+/*2.transform的运用*/
+/*3.linear-gradient()的运用*/
+/*4.relative大部分在父元素上使用，absolute大部分在子元素上使用*/
+/*5.几种一开始设置元素不出现，后来通过更改值就出现的方式*/
+/*height/width : 0*/
+/*z-index:-1*/

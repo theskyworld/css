@@ -1,5 +1,5 @@
-/*设置创建边框特效*/
-/*设置左、上、右、下边框*/
+/*创建边框特效*/
+/*创建左、上、右、下边框*/
 /*.btn-3:before{*/
 /*    content: "";*/
 /*    background: red;*/
@@ -92,17 +92,16 @@ button{
 .custom-btn{
     /*行内块元素*/
     display: inline-block;
-    /*相对于自身位置进行定位,如果相对父元素进行定位，所有按钮会重叠到一起*/
+    /*相对于自身位置进行定位。如果相对父元素进行定位，所有按钮会重叠到一起*/
     position: relative;
-    width:130px;
+    width: 130px;
     height: 40px;
     color: #fff;
     /*边框圆角，值按顺时针方向设置，可为具体数值或百分比*/
     border-radius: 5px;
     /*边框阴影*/
-    box-shadow: inset
-                /*设置阴影的水平位置 垂直位置 阴影模糊距离 阴影大小 阴影颜色*/
-                2px 2px 2px 0 rgba(255,255,255,.5),
+    /*设置阴影的水平位置 垂直位置 阴影模糊距离 阴影大小 阴影颜色*/
+    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
                 7px 7px 20px 0 rgba(0,0,0,.1),
                 4px 4px 5px rgba(0,0,0,.1);
     /*轮廓，设置与border相同*/
@@ -895,6 +894,7 @@ button{
     height: 100%;
     top: 0;
     left: 0;
+    /*设置文本的方向*/
     direction: rtl;
     z-index: -1;
     box-shadow: -7px -7px 20px 0 #fff9,

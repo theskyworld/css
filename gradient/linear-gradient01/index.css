@@ -1,0 +1,99 @@
+
+.gradient{
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    margin: 20px ;
+    background: #2196f3;
+}
+/*只指定渐变的颜色*/
+.gradient-container1{
+    background-image: linear-gradient(#e66465,#9198e5);
+}
+/*指定渐变的方向和颜色*/
+/*角度单位（https://blog.csdn.net/Miss_liangrm/article/details/92839456）*/
+/*deg（degress）:度，一个圆共有360度。90deg = 100grad = 0.25turn*/
+/*grad（gradians）:梯度，一个圆共有400个梯度*/
+/*turn（turns）:转，圈，一个圆共有一个圈*/
+/*rad（radians）:弧度，一个圆共有2Π弧度*/
+.gradient-container2{
+    background-image: linear-gradient(0.25turn,#3f87a6,#ebf8e1,#f69d3c);
+}
+/*指定渐变的方向、颜色和颜色的范围*/
+.gradient-container3{
+    /*不兼容颜色渐变时的备用方案*/
+    background: #2196f3;
+    background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+}
+.gradient-container4{
+    background-image: linear-gradient(217deg,rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%),
+                      linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%),
+                      linear-gradient(217deg,rgba(0,0,255,.8),rgba(0,0,255,0) 70.71%);
+}
+.gradient-container5{
+    background: linear-gradient(45deg,red,blue);
+}
+.gradient-container6{
+    display: block;
+    width: 90%;
+    height: auto;
+    background: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+}
+.gradient-container7{
+    background: #fff;
+    background: linear-gradient(to right bottom,transparent 50%,red 50%);
+}
+
+/*颜色渐变按钮*/
+.btn-container{
+    /*开启弹性盒模型*/
+    display: flex;
+    /*设置弹性盒中每个子元素位于盒子的水平中心*/
+    justify-content: center;
+    /*设置弹性盒中每个子元素位于盒子的垂直中心*/
+    align-items: center;
+    /*必要时拆成多行/多列显示*/
+    flex-wrap: wrap;
+    /*vm（viewport width）:视口宽度的百分值，1vm = 1/100视口宽度;*/
+    /*vh（viewport height）:视口高度的百分值，1vh = 1/100视口高度*/
+    /*两者通常不混合使用（只使用其中一个）*/
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+.btn{
+    /*弹性盒的子元素（项目），项目的大小具有弹性变化*/
+    /*项目的伸长、收缩的比例为1*/
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    /*设置文本的大小写方式*/
+    text-transform: uppercase;
+    transition:0.5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+/*设置每个按钮的背景渐变颜色*/
+.btn-1{
+    background-image: linear-gradient(to right,#f6d365 0%,#fda085 51%,#f6d365 100%);
+}
+.btn-2{
+    background-image: linear-gradient(to right,#fbc2eb 0%,#a6c1ee 51%,#fbc2eb 100%);
+}
+.btn-3{
+    background-image: linear-gradient(to right,#84fab0 0%,#8fd3f4 51%,#84fab0 100%);
+}
+.btn-4{
+    background-image: linear-gradient(to right,#a1c4fd 0%,#c2e9fb 51%,#a1c4fd 100%);
+}
+.btn-5{
+    background-image: linear-gradient(to right,#ffecd2 0%,#fcb69f 51%,#ffecd2 100%);
+}
+/*设置鼠标悬停时，按钮的背景渐变颜色的位置进行改变，形成按钮背景颜色动态变化的特效*/
+.btn:hover{
+    cursor: pointer;
+    background-position: right center;
+}

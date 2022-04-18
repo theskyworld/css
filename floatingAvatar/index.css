@@ -1,0 +1,54 @@
+/*浮动头像*/
+body,html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica',sans-serif;
+    /*背景图像当颜色渐变不兼容时的备用*/
+    background: rgba(26,188,156);
+    background: linear-gradient(135deg,rgba(26,188,156,1) 0%,rgba(142,68,173,1) 100%);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*指定弹性盒内项目的布局方向，定义主轴的方向：容器的主轴和块轴相同*/
+    flex-direction: column;
+    /*弹性盒内项目水平居中*/
+    justify-content: center;
+    /*弹性盒内项目垂直居中*/
+    align-items: center;
+}
+/*设置头像的容器及动画*/
+.avatar{
+    width: 150px;
+    height: 150px;
+    /*定义计算元素总宽度和总高度的方式：高度和宽度包含内容、内边距和边框*/
+    box-sizing: border-box;
+    border: solid 5px white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.6);
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+/*设置头像*/
+.avatar img{
+    width: 100%;
+    height: auto;
+}
+/*头像上下浮动的动画以及阴影的动态变化*/
+@keyframes float {
+    0%{
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,.6);
+        transform: translateY(0);
+    }
+    50%{
+        box-shadow: 0 25px 15px 0 rgba(0,0,0,.2);
+        transform: translateY(-20px);
+    }
+    100%{
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,.6);
+        transform: translateY(0);
+    }
+}

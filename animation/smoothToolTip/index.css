@@ -1,0 +1,190 @@
+/*工具栏平滑效果*/
+body{
+    /*background: ;*/
+    margin: 0;
+    padding: 0;
+    /*定义计算元素高度和宽度的方式*/
+    box-sizing: border-box;
+    color: #444;
+    font-family: "Comfortaa",cursive;
+    /*body内的所有水平居中*/
+    text-align: center;
+    font-size: 16px;
+}
+h1{
+    margin-bottom: 7%;
+}
+/*设置每个工具容器*/
+.con-tooltip{
+    display: inline-block;
+    position: relative;
+    background: #f2d1c9;
+    border-radius: 9px;
+    padding: 0 20px;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+/*设置鼠标悬停时显示文字的容器*/
+/*统一样式*/
+.tooltip {
+    visibility: hidden;
+    z-index: 1;
+    opacity: 0.4;
+    width: 100%;
+    padding: 0 20px;
+    background: #333;
+    color: #e086d3;
+    position: absolute;
+    top: -140%;
+    left: -25%;
+    border-radius: 9px;
+    font-size: 16px;
+    box-shadow: 0 0 3px rgba(56, 54, 54, .86);
+    transform: translateY(9px);
+    transition: all 0.3s ease-in-out;
+}
+/*设置每个显示文字容器边上的三角形*/
+.tooltip:after{
+    position: absolute;
+    left: 40%;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12.5px 0 12.5px;
+    border-color: #333 transparent transparent transparent;
+}
+/*鼠标悬停时文字容器移动的特效*/
+.con-tooltip:hover .tooltip{
+    visibility: visible;
+    transform: translateY(-10px);
+    opacity: 1;
+    transition:all 0.3s linear;
+    /*悬停时文字容器来回上下/左右移动*/
+    animation: odsoky 1s ease-in-out infinite alternate;
+}
+@keyframes odsoky {
+    0%{
+        transform: translateY(6px);
+    }
+    100%{
+        transform: translateY(1px);
+    }
+}
+/*单独样式*/
+/*left*/
+/*工具栏*/
+.left:hover{
+    transform: translateX(-6px);
+}
+/*文字容器*/
+.left .tooltip{
+    top: -20%;
+    left: -170%;
+}
+/*三角形*/
+.left .tooltip:after{
+    top: 40%;
+    left: 90%;
+    transform: rotate(-90deg);
+}
+/*top*/
+/*工具栏*/
+.top:hover{
+    transform: translateY(-6px);
+}
+/*bottom*/
+/*工具栏*/
+.bottom:hover{
+    transform: translateY(6px);
+}
+/*文字容器*/
+.bottom .tooltip{
+    top: 115%;
+    left: -20%;
+}
+/*三角形*/
+.bottom .tooltip:after{
+    top: -17%;
+    left: 40%;
+    transform: rotate(180deg);
+}
+/*right*/
+/*工具栏*/
+.right:hover{
+    transform: translateX(6px);
+}
+/*文字容器*/
+.right .tooltip{
+    top: -20%;
+    left: 115%;
+}
+/*三角形*/
+.right .tooltip:after{
+    top: 40%;
+    left: -12%;
+    transform: rotate(90deg);
+}
+
+/*画三角形*/
+.triangle{
+    position: absolute;
+    left: 50%;
+}
+/*方式一*/
+/*.triangle{*/
+/*    border: solid 15px;*/
+/*    border-color: transparent transparent transparent #ff6873;*/
+/*}*/
+/*.triangle{*/
+/*    background-color: transparent;*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    border: solid 30px ;*/
+/*    border-color:transparent transparent transparent #ff6873 ;*/
+/*}*/
+/*方式二*/
+/*.triangle{*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    background: linear-gradient(45deg,#ff6874 50%,transparent 50%);*/
+/*}*/
+/*方式三*/
+/*.triangle{*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    !*角向渐变*!*/
+/*    background: conic-gradient(from 90deg at 50% 0,#ff6873 18%,transparent 45deg);*/
+/*}*/
+/*方式四*/
+/*.triangle{*/
+/*    width: 21px;*/
+/*    height: 15px;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+/*.triangle:before{*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background: deeppink;*/
+/*    transform-origin: left bottom;*/
+/*    transform: rotate(45deg);*/
+/*}*/
+/*方式五*/
+/*.triangle{*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    background: deeppink;*/
+/*    clip-path: polygon(0 0,100% 0,0 100%,0 0);*/
+/*}*/
+/*方式六*/
+/*配合html使用字符*/
+.triangle{
+    font-size: 100px;
+    color: #ff6873;
+}

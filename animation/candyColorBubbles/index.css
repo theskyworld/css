@@ -923,3 +923,5 @@ button{
 /*5.几种一开始设置元素不出现，后来通过更改值就出现的方式*/
 /*height/width : 0*/
 /*z-index:-1*/
+/*opacity:0*/
+/*visibility:hidden*/

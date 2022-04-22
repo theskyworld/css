@@ -1,8 +1,90 @@
 /*3d悬停效果*/
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffffff;
+}
+h1{
+    margin: 0 auto 5px;
+    text-align: center;
+}
+h3{
+    font-family: 'Bree Serif',serif;
+}
+ul{
+    padding: 0;
+    margin: 0 0 50px;
+}
+/*清除浮动*/
+ul:after{
+    content:"";
+    display: table;
+    clear: both;
+}
 li{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    padding: 0;
+    list-style: none;
+}
+li a{
+    display: inline-block;
+    /*vertical-align: top;*/
+    text-decoration: none;
+    border-radius: 4px;
+}
+li h3{
+    margin: 0;
+    font-size: 16px;
+    color: rgba(255,255,255,.9);
+}
+li p{
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.8);
+}
+li .normal{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: rgba(52,73,94,.6);
+    box-shadow:inset 0 2px 20px #e6ebed;
+    text-align: center;
+    font-size: 50px;
+    line-height: 200px;
+}
+li .normal svg{
+    pointer-events: none;
+    width: 50px;
+}
+li .normal svg path{
+    /*绘制SVG图像的颜色*/
+    fill: rgba(52,73,94,.2);
+}
+.container{
+    width: 840px;
+    margin: 0 auto;
+}
+header{
+    font-family: 'Bree Serif',serif;
+    text-align: center;
+    margin: 50px 0 25px;
+    color: #34495e;
+}
+header p{
+    margin: 0;
+    color: rgba(52,73,94,.4);
+}
+li{
+    /*视口距离，观察点与z=0的平面的距离*/
     perspective: 400px;
 }
 .info{
+    /*3d旋转,旋转轴的x,y,z坐标，旋转角度*/
     transform: rotate3d(1,0,0,90deg);
     width: 100%;
     height: 100%;
@@ -11,38 +93,47 @@ li{
     top: 0;
     left: 0;
     border-radius: 4px;
+    /*指定元素什么时候成为鼠标事件的目标：永远不成为*/
     pointer-events: none;
     background-color: rgba(26,188,156,.9);
 }
+/*通过改变元素旋转的起点和相应动画来使得元素能从不同方向进入和出去*/
+/*从上面进入*/
 .in-top .info{
     transform-origin: 50% 0;
     animation: in-top 300ms ease 0ms 1 forwards;
 }
+/*从右侧进入*/
 .in-right .info{
     transform-origin: 100% 0;
     animation: in-right 300ms ease 0ms 1 forwards;
 }
+/*从底部进入*/
 .in-bottom .info{
     transform-origin: 50% 100%;
     animation: in-bottom 300ms ease 0ms 1 forwards;
 }
+/*从左侧进入*/
 .in-left .info{
     transform-origin: 0 0;
     animation: in-left 300ms ease 0ms 1 forwards;
 }
-
+/*从上面出去*/
 .out-top .info{
     transform-origin: 50% 0;
     animation: out-top 300ms ease 0ms 1 forwards;
 }
+/*从右侧出去*/
 .out-right .info{
     transform-origin: 100% 50%;
     animation: out-right 300ms ease 0ms 1 forwards;
 }
+/*从底部出去*/
 .out-bottom .info{
     transform-origin: 50% 100%;
     animation: out-bottom 300ms ease 0ms 1 forwards;
 }
+/*从左侧出去*/
 .out-left .info{
     transform-origin: 0 0;
     animation: out-left 300ms ease 0ms 1 forwards;
@@ -113,81 +204,3 @@ li{
     }
 }
 
-ul{
-    padding: 0;
-    margin: 0 0 50px;
-}
-ul:after{
-    content:"";
-    display: table;
-    clear: both;
-}
-li{
-    position: relative;
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin: 5px;
-    padding: 0;
-    list-style: none;
-}
-li a{
-    display: inline-block;
-    vertical-align: top;
-    text-decoration: none;
-    border-radius: 4px;
-}
-li h3{
-    margin: 0;
-    font-size: 16px;
-    color: rgba(255,255,255,.9);
-}
-li p{
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgba(255,255,255,.8);
-}
-li .normal{
-    width: 100%;
-    height: 100%;
-    background-color: #ecf0f1;
-    color: rgba(52,73,94,.6);
-    box-shadow:inset 0 2px 20px #e6ebed;
-    text-align: center;
-    font-size: 50px;
-    line-height: 200px;
-}
-li .normal svg{
-    pointer-events: none;
-    width: 50px;
-}
-li .normal svg path{
-    fill: rgba(52,73,94,.2);
-}
-*{
-    box-sizing: border-box;
-}
-body{
-    background-color: #ffffff;
-}
-h1{
-    margin: 0 auto 5px;
-    text-align: center;
-}
-h3{
-    font-family: 'Bree Serif',serif;
-}
-.container{
-    width: 840px;
-    margin: 0 auto;
-}
-header{
-    font-family: 'Bree Serif',serif;
-    text-align: center;
-    margin: 50px 0 25px;
-    color: #34495e;
-}
-header p{
-    margin: 0;
-    color: rgba(52,73,94,.4);
-}

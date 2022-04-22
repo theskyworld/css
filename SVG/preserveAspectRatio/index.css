@@ -13,3 +13,6 @@ rect:hover, rect:active {
 svg#first{
     background-color: red;
 }
+a{
+    cursor: pointer;
+}

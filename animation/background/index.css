@@ -106,6 +106,7 @@ body{
     animation-delay: 0s;
     animation-duration: 11s;
 }
+/*所有方块的统一动画*/
 @keyframes animate {
     0%{
         transform: translateY(0) rotate(0deg);

@@ -26,6 +26,7 @@ body{
     background: #1d1f20;
     border-radius: var(--borderWidth);
 }
+/*创建边框*/
 .gradient-border:after{
     content: "";
     position: absolute;
@@ -33,15 +34,17 @@ body{
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
+    /*边框的颜色渐变背景*/
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     border-radius: calc(2 * var(--borderWidth));
     z-index: -1;
     animation: animatedgradient 3s ease alternate infinite;
     background-size: 300% 300%;
 }
+/*边框的背景颜色渐变的动画*/
 @keyframes animatedgradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;

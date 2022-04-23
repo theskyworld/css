@@ -1,15 +1,14 @@
 /*复选框动画*/
 html {
+    display: flex;
     background: #ddd;
     height: 100%;
-    display: flex;
 }
-
 body {
     width: 100%;
     margin: auto;
 }
-/*背景*/
+/*所有todo的整体背景*/
 .todo-list{
     background: #fff;
     font-size: 20px;
@@ -31,18 +30,19 @@ body {
 .todo:last-child{
     border-bottom: none;
 }
-/*隐藏默认的复选框，默认复选框的功能还在（使用画出的复选框）*/
+/*隐藏默认的复选框（使用画出的复选框）同时给画出的复选框让出位置，默认复选框的功能还在*/
 .todo__state{
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
 }
-/*.todo__text{*/
-/*    color: #135156;*/
-/*    transition: all 0.4s linear 0.4s;*/
-/*}*/
-/*设置画出的复选框的样式*/
+/*文字特效*/
+.todo__text{
+    color: #135156;
+    transition: all 0.4s linear 0.4s;
+}
+/*设置画出的复选框、“√”、圆圈特效、文本划线的统一样式*/
 .todo__icon{
     position: absolute;
     top: 0;
@@ -57,14 +57,14 @@ body {
     stroke-linejoin: round;
     stroke-linecap: round;
 }
-/*设置文本划线的过渡*/
+/*设置文本划线、复选框和“√”的过渡*/
 .todo__line,
 .todo__box,
 .todo__check
 {
     transition: stroke-dashoffset 0.8s cubic-bezier(0.9,0,0.5,1);
 }
-/*设置画出的复选框被勾选后出现圆圈的特效*/
+/*设置画出的复选框被勾选时出现圆圈的特效*/
 .todo__circle{
     stroke: #27fdc7;
     stroke-dasharray: 1 6;
@@ -73,18 +73,7 @@ body {
     transform: scale(0.4) rotate(0deg);
     animation: none 0.8s linear;
 }
-@keyframes explode {
-    30%{
-        stroke-width: 3;
-        stroke-opacity: 1;
-        transform: scale(0.8) rotate(40deg);
-    }
-    100%{
-        stroke-width: 0;
-        stroke-opacity: 0;
-        transform: scale(1.1) rotate(60deg);
-    }
-}
+/*被勾选前的复选框和、“√”、文本划线、圆圈特效*/
 .todo__box{
     stroke-dasharray: 56.1053,56.1053;
     stroke-dashoffset: 0;
@@ -104,6 +93,7 @@ body {
     animation-delay: 0.56s;
     animation-duration: 0.56s;
 }
+/*设置被勾选时的文本、复选框、文本划线、"√”、圆圈特效*/
 .todo__state:checked ~ .todo__text {
     transition-delay: 0s;
     color: #5ebec1;
@@ -123,3 +113,16 @@ body {
 .todo__state:checked ~ .todo__icon .todo__circle{
     animation-name: explode;
 }
+@keyframes explode {
+    30%{
+        stroke-width: 3;
+        stroke-opacity: 1;
+        transform: scale(0.8) rotate(40deg);
+    }
+    100%{
+        stroke-width: 0;
+        stroke-opacity: 0;
+        transform: scale(1.1) rotate(60deg);
+    }
+}
+

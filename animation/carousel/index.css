@@ -38,6 +38,7 @@ body{
     top: 0;
     transform: rotateZ(180deg);
 }
+
 /*设置播放轮播图时图片运动的轨道*/
 .slider .slider-track{
     display: flex;
@@ -46,6 +47,7 @@ body{
     /*设置轮播的动画*/
     animation: scroll 40s linear infinite;
 }
+/*设置每个图片的容器*/
 .slider .slide{
     width: 250px;
     height: 100px;

@@ -1,5 +1,4 @@
 /*动画——单个过渡或多个过渡的集合*/
-
 /*赛隆人之眼*/
 .polling_message{
     color: white;
@@ -15,13 +14,13 @@
 .eye{
     background-color: red;
     background-image: linear-gradient(to right,
-                rgba(0,0.0,0.9) 25%,
-                rgba(0,0,0,0.1) 50%,
-                rgba(0,0,0,0.9) 75%);
-        color: white;
-        height: 100%;
-        width: 20% ;
-        animation: 4s linear 0s infinite alternate move_eye;
+                                      rgba(0,0.0,0.9) 25%,
+                                      rgba(0,0,0,0.1) 50%,
+                                      rgba(0,0,0,0.9) 75%);
+    color: white;
+    height: 100%;
+    width: 20% ;
+    animation: 4s linear 0s infinite alternate move_eye;
 }
 @keyframes move_eye  {
     from {margin-left: -20%;} to {margin-left: 100%}

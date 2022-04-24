@@ -2,7 +2,7 @@
 /*margin*/
 /*top、left、right、bottom*/
 /*translate*/
-
+/*加载动画*/
 body{
     margin: 0 auto;
     padding: 20px;
@@ -19,16 +19,28 @@ body{
     /*background-color: #e7e7e7;*/
     background-color: rgba(0, 0, 0, 0.06);
 }
-h1{
-    padding-bottom: 15px;
-    border-bottom: solid 1px #d8d8d8;
-    font-weight: 600;
-}
-h1 span{
-    font-family: monospace,serif;
+/*h1{*/
+/*    padding-bottom: 15px;*/
+/*    !*使用边框生成分割线*!*/
+/*    border-bottom: solid 1px #d8d8d8;*/
+/*    font-weight: 600;*/
+/*}*/
+/*h1 span{*/
+/*    font-family: monospace,serif;*/
+/*}*/
+.loadings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 750px;
+    height: auto;
+    position: relative;
+    left: 200px;
 }
 h3{
     padding-bottom: 20px;
+    /*使用边框阴影生成下的分割线*/
     box-shadow: 0 1px 0 rgba(0,0,0,.1),
                 0 2px 0 rgba(255,255,255,.9);
 }
@@ -42,7 +54,7 @@ p{
     float: left;
     width: 100px;
     height: 100px;
-    margin: 0 10px 10px 0;
+    margin: 10px 0 0 10px;
     padding: 20px 20px 20px;
     border-radius: 5px;
     text-align: center;
@@ -129,7 +141,7 @@ p{
 .load-3 .line:nth-of-type(3){
     animation: loadingC 0.6s 0.1s infinite;
 }
-/*三个点的动画，简单的长度变化*/
+/*三个点的动画*/
 @keyframes loadingC {
     /*通过translate(平移）来改变元素的位置，动画中常用，且不会发生浮动的负面影响*/
     0%{
@@ -148,6 +160,7 @@ p{
     height: 10px;
     margin: 0 auto;
     padding: 10px;
+    /*用边框生成不断旋转的形状*/
     border: dashed 5px #4b9cdb;
     border-radius: 50%;
     animation: loadingD 1.5s 0.3s cubic-bezier(0.17,0.37,0.43,0.67) infinite;

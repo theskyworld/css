@@ -79,27 +79,6 @@ body{
     opacity: 0.3;
     transform: scale(5);
 }
-.sp-circle-link{
-    text-decoration: none;
-    position: absolute;
-    left: 50%;
-    bottom: 100px;
-    margin-left: -50px;
-    text-align: center;
-    line-height: 100px;
-    width: 100px;
-    height: 100px;
-    background: #fff;
-    color: #3f1616;
-    font-size: 25px;
-    border-radius: 50%;
-    animation: fadeInRotate 1s linear 16s backwards;
-    transform: scale(1) rotate(0deg);
-}
-.sp-circle-link:hover{
-    background: #85373b;
-    color: #fff;
-}
 /*创建动画*/
 @keyframes blurFadeInout {
     0% {

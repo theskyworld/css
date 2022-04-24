@@ -16,7 +16,7 @@ body {
 }
 .com__content {
     position: relative;
-    flex: 8;
+    flex: 1;
     background: #404855;
     padding: 10vh 10vw;
 }
@@ -113,7 +113,6 @@ body {
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* animation classes */
 .animate {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -155,19 +154,4 @@ body {
 
 .delay-5 {
     transition-delay: 0.25s;
-}
-
-.logo {
-    position: fixed;
-    bottom: 3vh;
-    left: 3vw;
-    z-index: 2;
-}
-.logo img {
-    width: 45px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    transform: rotate(0);
-}
-.logo img:hover {
-    transform: rotate(180deg) scale(1.1);
 }

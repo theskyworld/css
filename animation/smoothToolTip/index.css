@@ -1,6 +1,5 @@
 /*工具栏平滑效果*/
 body{
-    /*background: ;*/
     margin: 0;
     padding: 0;
     /*定义计算元素高度和宽度的方式*/
@@ -62,9 +61,9 @@ h1{
     opacity: 1;
     transition:all 0.3s linear;
     /*悬停时文字容器来回上下/左右移动*/
-    animation: odsoky 1s ease-in-out infinite alternate;
+    animation: float 1s ease-in-out infinite alternate;
 }
-@keyframes odsoky {
+@keyframes float {
     0%{
         transform: translateY(6px);
     }
@@ -127,12 +126,12 @@ h1{
     transform: rotate(90deg);
 }
 
-/*画三角形*/
-.triangle{
-    position: absolute;
-    left: 50%;
-}
-/*方式一*/
+/*!*画三角形*!*/
+/*.triangle{*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*}*/
+/*!*方式一*!*/
 /*.triangle{*/
 /*    border: solid 15px;*/
 /*    border-color: transparent transparent transparent #ff6873;*/
@@ -144,20 +143,20 @@ h1{
 /*    border: solid 30px ;*/
 /*    border-color:transparent transparent transparent #ff6873 ;*/
 /*}*/
-/*方式二*/
+/*!*方式二*!*/
 /*.triangle{*/
 /*    width: 15px;*/
 /*    height: 15px;*/
 /*    background: linear-gradient(45deg,#ff6874 50%,transparent 50%);*/
 /*}*/
-/*方式三*/
+/*!*方式三*!*/
 /*.triangle{*/
 /*    width: 15px;*/
 /*    height: 15px;*/
 /*    !*角向渐变*!*/
 /*    background: conic-gradient(from 90deg at 50% 0,#ff6873 18%,transparent 45deg);*/
 /*}*/
-/*方式四*/
+/*!*方式四*!*/
 /*.triangle{*/
 /*    width: 21px;*/
 /*    height: 15px;*/
@@ -175,16 +174,16 @@ h1{
 /*    transform-origin: left bottom;*/
 /*    transform: rotate(45deg);*/
 /*}*/
-/*方式五*/
+/*!*方式五*!*/
 /*.triangle{*/
 /*    width: 15px;*/
 /*    height: 15px;*/
 /*    background: deeppink;*/
 /*    clip-path: polygon(0 0,100% 0,0 100%,0 0);*/
 /*}*/
-/*方式六*/
-/*配合html使用字符*/
-.triangle{
-    font-size: 100px;
-    color: #ff6873;
-}
+/*!*方式六*!*/
+/*!*配合html使用字符*!*/
+/*.triangle{*/
+/*    font-size: 100px;*/
+/*    color: #ff6873;*/
+/*}*/

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearFloat</title>
+    <style>
+        .father{
+           width: 400px;
+            border: solid 1px deeppink;
+        /*    给父元素开启BFC*/
+        /*    overflow: hidden;*/
+        }
+        .father .small{
+            width: 120px;
+            height: 120px;
+            background: darkmagenta;
+            float: left;
+        }
+        .father .large{
+           width: 200px;
+            height: 200px;
+            background: darkorange;
+            float: left;
+        }
+        .footer{
+            width: 900px;
+            height: 100px;
+            background: darkslateblue;
+        }
+        /*.clear{*/
+        /*    clear: both;*/
+        /*}*/
+
+        /*.clearfix:after{*/
+        /*    content: "";*/
+        /*    display: block;*/
+        /*    clear: both;*/
+        /*    !*height: 0;*!*/
+        /*    !*visibility: hidden;*!*/
+        /*}*/
+        .clearfix:before,
+        .clearfix:after{
+            content: "";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="father clearfix">
+    <div class="large"></div>
+    <div class="small"></div>
+<!--    <div class="clear"></div>-->
+</div>
+<div class="footer"></div>
+</body>
+</html>
